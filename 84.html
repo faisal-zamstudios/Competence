@@ -22,10 +22,10 @@
               <div style="padding-right: 8px; width: 55%;">
                 <div class="w-100 fs-12 fw-500" style="color: #616161; margin-bottom: 5px;">Photo</div>
                 <div class="fs-11 tc-grey fw-500" style="margin-bottom: 15px; width: 88%;">Only JPG, PNG files are allowed. Image must be less than 2 MB</div>
-                <div class="navbar p-0" style="width: 88%;">
-                  <img src="./img/84/Ellipse 49.png" class="mx-auto" style="width: 100px; height: 100px;" />
-                  <div class="navbar p-0 mx-auto">
-                    <div class="fs-11 text-center mx-auto position-relative" style="font-weight: 700; min-width: 101px; margin-right: 12px; color: white; background: #42A4DF; border-radius: 2px; padding-top: 8px; padding-bottom: 8px; margin-top: 8px; margin-bottom: 8px;">
+                <div class="adjust-btn-upload" style="width: 88%; display: flex; align-items: center;">
+                  <img src="./img/84/Ellipse 49.png" class="mx-auto" style="width: 100px; height: 100px; margin-bottom: 8px;" />
+                  <div class="mx-auto adjust-btn-upload" style="width: 66%; display: flex; height: fit-content;">
+                    <div class="fs-11 text-center mx-auto position-relative" style="font-weight: 700; min-width: 101px; margin-right: 12px; color: white; background: #42A4DF; border-radius: 2px; padding-top: 8px; padding-bottom: 8px;">
                       UPLOAD IMAGE
                       <input type="file" style="cursor: pointer; position: absolute; opacity: 0; top: 0; left: 0; bottom: 0; right: 0;" />
                     </div>
@@ -35,19 +35,19 @@
               </div>
               <div style="width: 45%;">
                 <div class="w-100 fs-12 fw-500" style="color: #616161; margin-bottom: 21px; padding-left: 2%;">Signature</div>
-                <div class="navbar p-0 w-100">
+                <div class="adjust-btn-upload w-100" style="display: flex; align-items: center; height: 86%;">
                   <img src="./img/84/Rectangle 188.png" class="sign-img" style="width: 146px; height: 111px;" />
-                  <div class="mx-auto">
-                    <div class="fs-11 text-center mx-auto w-100 position-relative" style="font-weight: 700; width: max-content; margin-right: 12px; color: white; background: #42A4DF; border-radius: 2px; padding: 8px; margin-top: 8px; margin-bottom: 8px;">
+                  <div class="adj-mr-auto" style="margin-left: auto !important;">
+                    <div class="fs-11 text-center mx-auto position-relative" style="font-weight: 700; width: 135px; margin-right: 12px; color: white; background: #42A4DF; border-radius: 2px; padding: 8px; margin-top: 8px;">
                       UPLOAD SIGNATURE
                       <input type="file" style="cursor: pointer; position: absolute; opacity: 0; top: 0; left: 0; bottom: 0; right: 0;" />
                     </div>
-                    <div class="fs-11 text-center fw-500 mx-auto w-100" style="color: #EF3C3C; width: max-content; padding: 8px;">Remove signature</div>
+                    <div class="fs-11 text-center fw-500 mx-auto w-100" style="color: #EF3C3C; width: 146px; padding: 8px;">Remove signature</div>
                   </div>
                 </div>
               </div>
             </div>
-            <hr style="border: 1px solid #EBEBEB;" />
+            <hr style="border: 1px solid #EBEBEB;" class="hr-adjust-margin" />
             <div class="w-100 navbar p-0">
               <div class="d-flex col-adj" style="padding: 0px !important; width: 50%;">
                 <div style="width: 38.938%; margin-right: 2.065%;">
@@ -81,7 +81,7 @@
               </div>
             </div>
 
-            <div class="w-100 navbar p-0" style="margin-top: 20px;">
+            <div class="w-100 navbar p-0 mt-20" style="margin-top: 20px;">
               <div style="width: 44.745%; display: flex;" class="col-adj">
                 <div style="width: 63.087%; margin-right: 2.349%;">
                   <label style="color: #616161;" class="fw-500 fs-11">Email</label>
@@ -117,7 +117,7 @@
               </div>
             </div>
             
-            <div class="w-100 navbar p-0" style="margin-top: 20px;">
+            <div class="w-100 navbar p-0 mt-20" style="margin-top: 20px;">
               <div style="width: 44.745%; display: flex;" class="col-adj">
                 <div style="width: 48.333%; margin-right: 2.333%;">
                   <label style="color: #616161;" class="fw-500 fs-11">Department</label>
@@ -140,8 +140,10 @@
                     <option>Hainaut</option>
                   </select>
                 </div>
-                <div style="width: 64.624%;">
-                  <label style="color: #616161;" class="fw-500 fs-11">Other Languages</label>
+                <div style="width: 64.624%; margin-top: auto;">
+                  <div class="w-100">
+                    <label style="color: #616161;" class="fw-500 fs-11 float-left">Other Languages</label><label class="fs-11 fw-500 float-right" style="font-style: italic; color: #B7B7B7;">(max 3)</label>
+                  </div>
                   <select class="form-control fs-12 fw-500" style="border: 1px solid #DCDCDC; color: #313131; height: 29px; margin-right: 1.775%; padding-left: 5px !important; padding-right: 0px !important; padding-top: unset !important; padding-bottom: unset;" >
                     <option>Electrician</option>
                   </select>
@@ -152,7 +154,7 @@
             <hr style="border: 1px solid #EBEBEB;" />
 
             <div class="navbar p-0 w-100">
-              <div class="d-flex" style="justify-content: left; width: 58%;">
+              <div class="d-flex" style="justify-content: left; width: 75%;">
                 <div class="fs-12 fw-500" style="color: #42A4DF;">
                   Personal Information
                 </div>
@@ -214,8 +216,8 @@
                 * This will send a password reset email to the user.
               </div>
             </div>
-            <div class="row m-0 bg-white w-100" style="padding-bottom: 28px; justify-content: center;">
-              <div style="width: 57%; min-width: 180px; padding-top: 13px; margin-bottom: 0px;" class="col-adj my-auto">
+            <div class="row m-0 bg-white w-100" style="padding-bottom: 28px; justify-content: center; padding-left: 4.5%; padding-right: 4.5%;">
+              <div style="width: 57%; padding-top: 28px; margin-bottom: 0px;" class="col-adj my-auto">
                 <div class="d-flex">
                   <img src="./img/84/Rectangle 226.png" class="my-auto img-fluid" style="border-radius: 3px; margin-right: 13px;" />
                   <div style="min-width: 70px;">
@@ -242,9 +244,11 @@
                   </div>
                 </div>
               </div>
-              <div style="width: 35%; min-width: 96px; margin-top: 13px;" class="col-adj text-right">
-                <img src="./img/84/image 1.png" style="margin-bottom: 2px;" />
-                <div class="w-100">
+              <div style="width: 41%; min-width: 96px; margin-top: 13px; display: grid;" class="col-adj adjust-badges-alignment">
+                <div style="margin-left: auto;">
+                  <img src="./img/84/image 1.png" style="margin-bottom: 2px;" />
+                </div>
+                <div style="margin-left: auto; width: 93px;">
                   <img src="./img/84/icon.png" style="margin-top: 5px;" />
                   <img src="./img/84/icon.png" style="margin-top: 5px;" />
                   <img src="./img/84/icon.png" style="margin-top: 5px;" />
