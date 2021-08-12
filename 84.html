@@ -390,41 +390,43 @@
             style="margin-bottom: 13px; padding-left: 9.119%; padding-right: 9.119%; padding-top: 14px; padding-bottom: 14px;">
             <div class="w-100 d-flex">
               <div class="custom02">
-                <input class="my-auto" id="radio03-01" disabled type="radio" name="create-password-radio"
+                <input class="my-auto pass-radio radio1" id="radio03-01" type="radio" name="create-password-radio" value="igotnone" onclick="show1();"
                   style="width: 14px; height: 14px;" />
                 <label for="radio03-01"></label>
               </div>
-              <div class="fw-500 fs-11" style="color: #B4B4B4; line-height: 12px !important;">
+              <div class="fw-500 fs-11 change1" style="color: #B4B4B4; line-height: 12px !important;">
                 Auto-generate password
               </div>
             </div>
             <div class="w-100 d-flex">
               <div class="custom02">
-                <input class="my-auto" checked id="radio03-02" type="radio" name="create-password-radio"
+                <input class="my-auto pass-radio radio2" checked id="radio03-02" type="radio" name="create-password-radio" value="igottwo" onclick="show2();"
                   style="width: 14px; height: 14px;" />
                 <label for="radio03-02"></label>
               </div>
-              <div class="fw-500 fs-11" style="color: #616161; line-height: 12px !important;">
+              <div class="fw-500 fs-11 change" style="color: #616161; line-height: 12px !important;">
                 Let me create the password
               </div>
             </div>
             <div class="w-100" style="margin-top: 10px;">
               <label class="fw-500 fs-11" style="color: #616161;">Password</label>
               <div class="w-100">
-                <input id="password-field" type="password" class="form-control fs-17"
+                <input id="password-field" type="password" class="form-control fs-17 set-pass"
                   style="color: #313131; border: 1px solid #DCDCDC; box-sizing: border-box; border-radius: 2px; height: 29px; padding-left: 10px; padding-bottom: 9px;"
                   name="password">
                 <img src="./img/84/hide.png" toggle="#password-field" class="field-icon toggle-password pass"
                   style="display: none;" />
               </div>
-              <label class="fw-500 fs-11" style="color: #616161; margin-top: 14px;">Confirm Password</label>
-              <div class="w-100">
-                <input id="password-field1" type="password" class="form-control fs-17"
-                  style="color: #313131; border: 1px solid #DCDCDC; box-sizing: border-box; border-radius: 2px; height: 29px; padding-left: 10px; padding-bottom: 9px;"
-                  name="password">
-                <img src="./img/84/hide.png" toggle="#password-field1" class="field-icon toggle-password conpass"
-                  style="display: none;" />
-              </div>
+              <div id="div1" class="hide">
+                <label class="fw-500 fs-11" style="color: #616161; margin-top: 14px;">Confirm Password</label>
+                <div class="w-100">
+                  <input id="password-field1" type="password" class="form-control fs-17"
+                    style="color: #313131; border: 1px solid #DCDCDC; box-sizing: border-box; border-radius: 2px; height: 29px; padding-left: 10px; padding-bottom: 9px;"
+                    name="password">
+                  <img src="./img/84/hide.png" toggle="#password-field1" class="field-icon toggle-password conpass"
+                    style="display: none;" />
+                </div>
+            </div>
             </div>
 
             <div class="w-100" style="margin-top: 15px;">
@@ -492,7 +494,7 @@
           </div>
 
           <div class="navbar p-0 w-100" style="margin-top: 13px;">
-            <button class="fs-12 btn-set-width-50"
+            <button class="fs-12 btn-set-width-50" id="download-page-as-image"
               style="background: #47CA5B; border-radius: 3px; height: 28px; width: 25.758%; font-weight: 700; outline: none; border: none; color: white; margin-bottom: 6px;">
               Download <img src="./img/84/Vector (1).png" class="img-fluid" style="margin-left: 5px;" />
             </button>
@@ -777,9 +779,58 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
+    
+
 
   <script>
+      function show1(){
+        document.getElementById('div1').style.display ='none';
+      }
+
+      function show2(){
+        document.getElementById('div1').style.display = 'block';
+      }
+    </script>
+
+  <script>
+
+
+    function generatePassword() {
+      var length = 13, 
+      charset = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*",
+      result = ""; 
+          
+      for (var i = 0, n = charset.length; i < length; ++i) {
+          result += charset.charAt(Math.floor(Math.random() * n));
+      }
+    
+      return result;
+    }
+
+    // function getNewPassword() {
+    //     $('#pass').text(generatePassword());
+    // }  
+
     $(document).ready(function () {
+
+      generatePassword()
+      
+      $(".radio1").click(function() {
+        if ($(this).is(':checked')) {
+          $(".change").css('color', '#B4B4B4');
+          $(".change1").css('color', '#616161');
+          $(".set-pass").val( generatePassword());
+        }
+      });
+
+      $(".radio2").click(function() {
+        if ($(this).is(':checked')) {
+          $(".change").css('color', '#616161');
+          $(".change1").css('color', '#B4B4B4');
+          $(".set-pass").val("");
+        }
+      });
+
       $("#password-field").on('keypress', function () {
         $('.pass').css('display', 'block');
       });
